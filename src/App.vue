@@ -1,7 +1,10 @@
-<script setup></script>
+<script setup>
+import HeaderComponent from "./components/HeaderComponent.vue"
+</script>
 
 
 <template>
+  <HeaderComponent></HeaderComponent>
   <h1 class="title">Hola a todos!</h1>
 </template>
 
