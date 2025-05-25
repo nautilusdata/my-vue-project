@@ -1,4 +1,4 @@
-/* src/assets/base.css or src/style.css (example) */
+/* src/assets/base.css or src/style.css */
 
 :root {
   /* Define some basic CSS variables */
@@ -8,21 +8,31 @@
   --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+html, body { /* Ensure html and body take up full viewport height */
+  height: 100%;
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
   font-family: var(--font-family-base);
   color: var(--color-text);
   background-color: var(--color-background);
   line-height: 1.6;
+
+  /* --- FLEXBOX FOR CENTERING --- */
+  display: flex; /* Make body a flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center; /* Center text within elements */
 }
 
 #app {
   /* Basic styling for the main app container */
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1280px; /* Limits the width of your content */
+  /* margin: 0 auto; /* No longer needed as flexbox handles centering */
   padding: 2rem;
   font-weight: normal;
+  /* Optional: If you want #app to shrink-wrap its content horizontally,
+     you might need to adjust width/max-width or ensure its children handle it. */
+  width: 100%; /* Ensure it takes full available width up to max-width */
 }
 
 a {
@@ -34,14 +44,11 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p { /* Apply text-align to all these for consistent centering */
   color: var(--color-text);
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
-
-p {
-  margin-bottom: 1em;
+  margin-top: 0.5em; /* Reduced top margin to avoid excessive spacing when vertically centered */
+  margin-bottom: 0.5em; /* Reduced bottom margin */
+  /* text-align: center; is already handled by body { text-align: center; } above */
 }
 
 button {
@@ -52,6 +59,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1em;
+  margin-top: 1em; /* Add some margin for buttons if needed */
 }
 
 button:hover {
