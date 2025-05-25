@@ -8,8 +8,8 @@
 
 <style>
   .title {
-    background-color:rgb(7, 52, 177);
-    color: rgb(109, 211, 14);
+    background-color:rgb(114, 127, 163);
+    color: rgb(14, 50, 211);
   }
 </style>
 
